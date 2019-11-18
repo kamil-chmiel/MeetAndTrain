@@ -7,6 +7,7 @@ import './rn-addons';
 configure(() => {
 	require('../app/components/IntroButton/stories');
 	require('../app/containers/Intro/stories');
+	require('../app/containers/SignUp/stories');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
