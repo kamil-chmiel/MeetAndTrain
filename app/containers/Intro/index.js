@@ -2,18 +2,9 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import Icon from 'react-native-ionicons';
+import IntroButton from '../../components/IntroButton';
 
-// import {
-// 	Container,
-// 	Header,
-// 	HeaderGradient,
-// 	Logo,
-// 	Body,
-// 	UrlTitle,
-// 	ErrorText,
-// 	VersionContainer,
-// 	NextButton
-// } from './styles';
+import { ButtonsContainer } from './styles';
 
 const introScreens = [
 	{
@@ -33,10 +24,26 @@ const introScreens = [
 	}
 ];
 
-const Intro = () => {
+const Intro = ({ navigation }) => {
 	return (
 		<View style={{ flex: 1 }}>
 			<AppIntroSlider slides={introScreens} showNextButton={false} showDoneButton={false} />
+			<ButtonsContainer>
+				<IntroButton
+					title="Sign up"
+					color="green"
+					onPress={() => {
+						navigation.navigate('SignUp');
+					}}
+				/>
+				<IntroButton
+					title="Sign in"
+					color="white"
+					onPress={() => {
+						navigation.navigate('SignIn');
+					}}
+				/>
+			</ButtonsContainer>
 		</View>
 	);
 };
