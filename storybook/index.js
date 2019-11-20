@@ -6,6 +6,7 @@ import './rn-addons';
 // import stories
 configure(() => {
 	require('../app/components/IntroButton/stories');
+	require('../app/components/CustomTextInput/stories');
 	require('../app/containers/Intro/stories');
 	require('../app/containers/SignUp/stories');
 }, module);

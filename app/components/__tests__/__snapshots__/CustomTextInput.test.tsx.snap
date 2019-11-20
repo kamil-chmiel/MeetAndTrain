@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "flex-start",
+        "height": 40,
+        "left": 0,
+        "marginBottom": 5,
+        "marginTop": 5,
+        "right": 0,
+        "top": 50,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "gray",
+          "fontWeight": "bold",
+          "textAlign": "left",
+        },
+      ]
+    }
+  >
+    testTitle
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "width": "100%",
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "green",
+          "height": 1,
+          "width": "100%",
+        },
+      ]
+    }
+  />
+</View>
+`;

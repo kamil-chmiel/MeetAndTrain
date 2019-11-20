@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+
+import {Container, AvatarContainer, Avatar, FormContainer} from './styles'
+import CustomTextInput from '../../components/CustomTextInput'
 
 class SignUp extends Component {
 	render() {
-		return <View style={{ flex: 1 }} />;
+		return (
+			<Container>
+				<AvatarContainer> 
+					<Avatar/>
+				</AvatarContainer>
+				<FormContainer>
+					<CustomTextInput title="Name"/>
+					<CustomTextInput title="Age"/>
+					<CustomTextInput title="Name"/>
+				</FormContainer>
+			</Container>
+		)
+		
 	}
 }
 
