@@ -32,6 +32,7 @@ exports[`should render correctly 1`] = `
   <TextInput
     allowFontScaling={true}
     rejectResponderTermination={true}
+    secureTextEntry={false}
     style={
       Array [
         Object {

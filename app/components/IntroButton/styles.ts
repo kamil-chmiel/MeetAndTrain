@@ -15,7 +15,7 @@ export const Container = styled.TouchableOpacity`
 
 export const Title = styled.Text`
 	flex: 1;
-	marginTop: 14;
+	margin-top: 14;
 	font-size: 20;
 	color: ${(props) => props.color};
 	font-weight: bold;

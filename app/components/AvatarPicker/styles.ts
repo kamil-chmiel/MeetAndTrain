@@ -1,8 +1,4 @@
-import styled from 'styled-components/native';
-
-export const Container = styled.View`
-    flex: 1;
-`;
+import styled, { css } from 'styled-components/native';
 
 export const AvatarContainer = styled.TouchableOpacity`
     width: 200;
@@ -12,16 +8,9 @@ export const AvatarContainer = styled.TouchableOpacity`
 	border-radius: 100;
     margin-left: auto;
     margin-right: auto;
-    -ms-block-progression
 `;
 
 export const Avatar = styled.Image`
 	flex: 1;
 	border-radius: 100;
-`;
-
-export const FormContainer = styled.View`
-	width: 80%;
-    margin-left: auto;
-    margin-right: auto;
 `;
