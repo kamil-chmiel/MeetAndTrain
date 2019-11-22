@@ -3,8 +3,17 @@ import React, { Component } from 'react';
 import {Container, AvatarContainer, Avatar, FormContainer} from './styles'
 import CustomTextInput from '../../components/CustomTextInput'
 import AvatarPicker from '../../components/AvatarPicker'
+import DatePickerField from '../../components/DatePickerField'
 
-class SignUp extends Component {
+
+interface Props {
+}
+
+interface State {
+	name: string;
+}
+
+class SignUp extends Component<Props, State> {
 
 	state = {
 		name: '',
@@ -17,9 +26,9 @@ class SignUp extends Component {
 				<AvatarPicker/>
 				<FormContainer>
 					<CustomTextInput title="Name"/>
-					<CustomTextInput title="Age"/>
 					<CustomTextInput title="Password" secureTextEntry/>
 					<CustomTextInput title="Repeat password" secureTextEntry/>
+					<DatePickerField title="Birth date"/>
 				</FormContainer>
 			</Container>
 		)

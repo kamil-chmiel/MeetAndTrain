@@ -12,7 +12,6 @@ export const AvatarContainer = styled.TouchableOpacity`
 	border-radius: 100;
     margin-left: auto;
     margin-right: auto;
-    -ms-block-progression
 `;
 
 export const Avatar = styled.Image`
@@ -22,6 +21,8 @@ export const Avatar = styled.Image`
 
 export const FormContainer = styled.View`
 	width: 80%;
+    height: 200;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
 `;

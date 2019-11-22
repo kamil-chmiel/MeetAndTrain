@@ -1,13 +1,9 @@
 import styled, { css } from 'styled-components/native';
 
 export const Container = styled.View`
+    width: 100%;
 	height: 40;
-	left: 0;
-	right: 0;
-	top: 50;
 	align-items: flex-start;
-	margin-bottom: 5;
-	margin-top: 5;
 `;
 
 export const Title = styled.Text`
