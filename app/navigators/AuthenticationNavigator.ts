@@ -3,6 +3,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Intro from '../containers/Intro';
 import SignUp from '../containers/SignUp';
 import SignIn from '../containers/SignIn';
+import MainPanel from '../containers/MainPanel';
 
 const AuthenticationNavigator = createStackNavigator({
 	Intro: {
@@ -28,6 +29,12 @@ const AuthenticationNavigator = createStackNavigator({
 				backgroundColor: 'white'
 			},
 			headerTitle: 'Sign in'
+		}
+	},
+	MainPanel: {
+		screen: MainPanel,
+		navigationOptions: {
+			header: null
 		}
 	}
 });
