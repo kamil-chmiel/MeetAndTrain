@@ -5,6 +5,7 @@ import RNPickerSelect from 'react-native-picker-select';
 
 interface Props {
   title: string;
+  items: object;
 }
 
 interface State {
@@ -33,11 +34,7 @@ class PickerField extends Component<Props, any> {
         <RNPickerSelect
           onValueChange={value => this.setChosenValue(value)}
           placeholder=""
-          items={[
-            {label: 'Football', value: 'football'},
-            {label: 'Baseball', value: 'baseball'},
-            {label: 'Hockey', value: 'hockey'},
-          ]}
+          items={this.props.items}
         />
         <Line />
       </Container>

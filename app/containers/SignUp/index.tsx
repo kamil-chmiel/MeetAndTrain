@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {Container, AvatarContainer, Avatar, FormContainer} from './styles';
+import {Container, FormContainer} from './styles';
 import CustomTextInput from '../../components/CustomTextInput';
 import AvatarPicker from '../../components/AvatarPicker';
 import DatePickerField from '../../components/DatePickerField';
@@ -25,11 +25,19 @@ class SignUp extends Component<State> {
       <Container>
         <AvatarPicker />
         <FormContainer>
+          <CustomTextInput title="Login" />
           <CustomTextInput title="Name" />
           <CustomTextInput title="Password" secureTextEntry />
           <CustomTextInput title="Repeat password" secureTextEntry />
           <DatePickerField title="Birth date" />
-          <PickerField title="Gender" />
+          <PickerField
+            title="Gender"
+            items={[
+              {label: 'Female', value: '0'},
+              {label: 'Male', value: '1'},
+              {label: 'Other', value: '2'},
+            ]}
+          />
           <IntroButton title="Submit" onPress={this.onSubmit} />
         </FormContainer>
       </Container>

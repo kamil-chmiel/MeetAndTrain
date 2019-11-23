@@ -1,27 +1,13 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   flex: 1;
-`;
-
-export const AvatarContainer = styled.TouchableOpacity`
-  width: 200;
-  height: 200;
-  margin-top: 30;
-  background-color: gray;
-  border-radius: 100;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-export const Avatar = styled.Image`
-  flex: 1;
-  border-radius: 100;
 `;
 
 export const FormContainer = styled.View`
   width: 80%;
-  height: 350;
+  height: 380;
+  margin-top: 20;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
