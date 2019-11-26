@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
+import {login} from '../../actions/sessionActions';
 
 import {Container, FormContainer} from './styles';
 import CustomTextInput from '../../components/CustomTextInput';
@@ -7,17 +10,21 @@ import DatePickerField from '../../components/DatePickerField';
 import IntroButton from '../../components/IntroButton';
 import PickerField from '../../components/PickerField';
 
+// interface Props {
+//   login: (username: string, password: string) => (error: Error)
+// }
+
 interface State {
   name: string;
 }
 
-class SignUp extends Component<State> {
+class SignUp extends Component<any, State> {
   state = {
     name: '',
   };
 
   onSubmit = () => {
-    this.props.navigation.navigate('MainPanel');
+    this.props.login('test', 'pass');
   };
 
   render() {
@@ -45,4 +52,10 @@ class SignUp extends Component<State> {
   }
 }
 
-export default SignUp;
+const mapStateToProps = ({}) => ({});
+
+const mapDispatchToProps = {
+  login,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
