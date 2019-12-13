@@ -1274,6 +1274,11 @@
     eslint-plugin-react-native "3.6.0"
     prettier "1.16.4"
 
+"@react-native-community/viewpager@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/viewpager/-/viewpager-3.3.0.tgz#e613747a43a31a6f3278f817ba96fdaaa7941f23"
+  integrity sha512-tyzh79l4t/hxiyS9QD3LRmWMs8KVkZzjrkQ8U8+8To1wmvVCBtp8BenvNsDLTBO7CpO/YmiThpmIdEZMr1WuVw==
+
 "@react-navigation/core@^3.5.1":
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
@@ -8865,6 +8870,11 @@ react-native-app-intro-slider@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-native-app-intro-slider/-/react-native-app-intro-slider-3.0.0.tgz#c3620b967503ce410b3d767252392bb6fb2edf97"
   integrity sha512-2XXUYnSeMYZTLhdRYHSwv8mhoyuEaYxmQfXrWQInH1QvjsnJtKgvORI3bJuJN+tNPg3aut6JYYCNOFsI5of32A==
+
+react-native-best-viewpager@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-best-viewpager/-/react-native-best-viewpager-1.0.1.tgz#504109af543333a990ec65170bc0c8480b30941d"
+  integrity sha512-sHQtoVG2I1CeDFw4X8GgaQisMqtGNSPkF86b9umTv+UcgeLHbZD4rHgAmsoXCaShRlclG16vH/98yMBaywcZnA==
 
 react-native-date-picker@^2.7.0:
   version "2.7.0"
