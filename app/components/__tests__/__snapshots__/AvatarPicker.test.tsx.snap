@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "gray",
+      "borderRadius": 10,
+      "height": 200,
+      "justifyContent": "center",
+      "marginLeft": "auto",
+      "marginRight": "auto",
+      "marginTop": 30,
+      "opacity": 1,
+      "width": 200,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "white",
+          "fontSize": 16,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    Choose your avatar
+  </Text>
+  <Image
+    source={null}
+    style={
+      Array [
+        Object {
+          "borderRadius": 10,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`should render correctly 2`] = `
+<View
+  accessible={true}
+  focusable={true}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "gray",
+      "borderRadius": 10,
+      "height": 200,
+      "justifyContent": "center",
+      "marginLeft": "auto",
+      "marginRight": "auto",
+      "marginTop": 30,
+      "opacity": 1,
+      "width": 200,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "white",
+          "fontSize": 16,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    Choose your avatar
+  </Text>
+  <Image
+    source={null}
+    style={
+      Array [
+        Object {
+          "borderRadius": 10,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  />
+</View>
+`;

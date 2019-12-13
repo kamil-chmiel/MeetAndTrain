@@ -1,5 +1,6 @@
 {
-    "compilerOptions": {
-      // "types": []
-    }
+  "compilerOptions": {
+    // "types": []
+    "jsx": "react"
+  }
 }

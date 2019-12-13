@@ -7,6 +7,9 @@ import './rn-addons';
 configure(() => {
 	require('../app/components/IntroButton/stories');
 	require('../app/components/CustomTextInput/stories');
+	require('../app/components/AvatarPicker/stories');
+	require('../app/components/CustomDatePicker/stories');
+	require('../app/components/DatePickerField/stories');
 	require('../app/containers/Intro/stories');
 	require('../app/containers/SignUp/stories');
 }, module);

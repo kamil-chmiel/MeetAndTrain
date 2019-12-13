@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Input, Title, Line} from './styles';
+import { Container, Input, Title, Line } from './styles';
 
-const CustomTextInput = ({title}) => {
+const CustomTextInput = (props) => {
 	return (
 		<Container>
-            <Title>{title}</Title>
-			<Input/>
-			<Line/>
+			<Title>{props.title}</Title>
+			<Input {...props} />
+			<Line />
 		</Container>
 	);
 };
