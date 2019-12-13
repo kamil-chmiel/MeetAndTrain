@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Input, Title, Line } from './styles';
 
-const CustomTextInput = ({ title, value, secureTextEntry = false, editable = true }) => {
+const CustomTextInput = (props) => {
 	return (
 		<Container>
-			<Title>{title}</Title>
-			<Input secureTextEntry={secureTextEntry} editable={editable} value={value} />
+			<Title>{props.title}</Title>
+			<Input {...props} />
 			<Line />
 		</Container>
 	);

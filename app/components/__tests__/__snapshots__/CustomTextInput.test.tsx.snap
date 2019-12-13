@@ -7,11 +7,7 @@ exports[`should render correctly 1`] = `
       Object {
         "alignItems": "flex-start",
         "height": 40,
-        "left": 0,
-        "marginBottom": 5,
-        "marginTop": 5,
-        "right": 0,
-        "top": 50,
+        "width": "100%",
       },
     ]
   }
@@ -32,7 +28,6 @@ exports[`should render correctly 1`] = `
   <TextInput
     allowFontScaling={true}
     rejectResponderTermination={true}
-    secureTextEntry={false}
     style={
       Array [
         Object {
@@ -43,6 +38,7 @@ exports[`should render correctly 1`] = `
         },
       ]
     }
+    title="testTitle"
     underlineColorAndroid="transparent"
   />
   <View

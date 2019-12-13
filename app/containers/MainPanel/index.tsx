@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Text } from 'react-native';
 
 import { Container, AvatarContainer, Avatar, FormContainer } from './styles';
 import CustomTextInput from '../../components/CustomTextInput';
@@ -12,7 +13,11 @@ interface State {}
 
 class MainPanel extends Component<Props, State> {
 	render() {
-		return <Container />;
+		return (
+			<Container>
+				<Text>Main Panel</Text>
+			</Container>
+		);
 	}
 }
 

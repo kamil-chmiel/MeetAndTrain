@@ -1,17 +1,17 @@
-import {AppRegistry} from 'react-native';
-import {getStorybookUI, configure} from '@storybook/react-native';
+import { AppRegistry } from 'react-native';
+import { getStorybookUI, configure } from '@storybook/react-native';
 
 import './rn-addons';
 
 // import stories
 configure(() => {
-  require('../app/components/IntroButton/stories');
-  require('../app/components/CustomTextInput/stories');
-  require('../app/components/AvatarPicker/stories');
-  require('../app/components/CustomDatePicker/stories');
-  require('../app/components/DatePickerField/stories');
-  require('../app/containers/Intro/stories');
-  require('../app/containers/SignUp/stories');
+	require('../app/components/IntroButton/stories');
+	require('../app/components/CustomTextInput/stories');
+	require('../app/components/AvatarPicker/stories');
+	require('../app/components/CustomDatePicker/stories');
+	require('../app/components/DatePickerField/stories');
+	require('../app/containers/Intro/stories');
+	require('../app/containers/SignUp/stories');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters

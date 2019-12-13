@@ -15,8 +15,9 @@ exports[`should render correctly 1`] = `
   style={
     Object {
       "backgroundColor": "gray",
-      "borderRadius": 100,
+      "borderRadius": 10,
       "height": 200,
+      "justifyContent": "center",
       "marginLeft": "auto",
       "marginRight": "auto",
       "marginTop": 30,
@@ -25,12 +26,26 @@ exports[`should render correctly 1`] = `
     }
   }
 >
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "white",
+          "fontSize": 16,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    Choose your avatar
+  </Text>
   <Image
     source={null}
     style={
       Array [
         Object {
-          "borderRadius": 100,
+          "borderRadius": 10,
           "flexBasis": 0,
           "flexGrow": 1,
           "flexShrink": 1,
@@ -56,8 +71,9 @@ exports[`should render correctly 2`] = `
   style={
     Object {
       "backgroundColor": "gray",
-      "borderRadius": 100,
+      "borderRadius": 10,
       "height": 200,
+      "justifyContent": "center",
       "marginLeft": "auto",
       "marginRight": "auto",
       "marginTop": 30,
@@ -66,12 +82,26 @@ exports[`should render correctly 2`] = `
     }
   }
 >
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "white",
+          "fontSize": 16,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    Choose your avatar
+  </Text>
   <Image
     source={null}
     style={
       Array [
         Object {
-          "borderRadius": 100,
+          "borderRadius": 10,
           "flexBasis": 0,
           "flexGrow": 1,
           "flexShrink": 1,
