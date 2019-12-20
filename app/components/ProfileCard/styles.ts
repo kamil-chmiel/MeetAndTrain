@@ -11,10 +11,7 @@ export const Container = styled.TouchableOpacity`
 	border-width: 3;
 `;
 
-export const AnimatedView = styled.View`
-	flex: 1;
-	background-color: red;
-`;
+export const AnimatedView = styled.View`flex: 1;`;
 
 export const Picture = styled.Image`
 	width: 100%;

@@ -9,15 +9,32 @@ import { Container, AvatarContainer, Avatar, FormContainer } from './styles';
 
 interface Props {}
 
-interface State {}
+interface State {
+	isSwypingEnabled: boolean;
+}
 
 class MainPanel extends Component<Props, State> {
+	state = {
+		isSwypingEnabled: true
+	};
+
+	onCardSwypeStarted = () => {
+		this.setState({ isSwypingEnabled: false });
+	};
+
+	onCardSwypeEnded = () => {
+		this.setState({ isSwypingEnabled: true });
+	};
+
 	render() {
 		return (
 			<Container>
-				<IndicatorViewPager initialPage={1} style={{ flex: 1 }}>
+				<IndicatorViewPager scrollEnabled={this.state.isSwypingEnabled} initialPage={1} style={{ flex: 1 }}>
 					<Profile />
-					<ChoosingPanel />
+					<ChoosingPanel
+						onCardSwypeStarted={this.onCardSwypeStarted}
+						onCardSwypeEnded={this.onCardSwypeEnded}
+					/>
 					<Matches />
 				</IndicatorViewPager>
 			</Container>
