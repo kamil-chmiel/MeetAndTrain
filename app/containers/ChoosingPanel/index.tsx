@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Dimensions } from 'react-native';
+import { Animated, Easing, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { getProfiles } from '../../actions/usersActions';
 import * as userActions from '../../actions/usersActions';
@@ -7,6 +7,7 @@ import * as userActions from '../../actions/usersActions';
 import { Container, CardsContainer, ButtonsContainer, NoProfilesText, LoadingPanel, LoadingImage } from './styles';
 import ChoosingButton from '../../components/ChoosingButton';
 import ProfileCard from '../../components/ProfileCard';
+import LoadingView from '../../components/LoadingView';
 
 interface Profile {
 	Name: string;
@@ -66,11 +67,7 @@ class ChoosingPanel extends Component<Props, State> {
 
 	renderLoadingPanel = () => {
 		if (this.state.loading) {
-			return (
-				<LoadingPanel>
-					<LoadingImage source={require('../../assets/hantla.png')} />
-				</LoadingPanel>
-			);
+			return <LoadingView />;
 		}
 	};
 

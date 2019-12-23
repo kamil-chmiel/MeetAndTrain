@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableContainer, Image } from './styles';
 
-const IntroButton = ({ imageSource, onPress }) => {
+const ChoosingButton = ({ imageSource, onPress }) => {
 	return (
 		<TouchableContainer onPress={onPress}>
 			<Image source={imageSource} />
@@ -9,4 +9,4 @@ const IntroButton = ({ imageSource, onPress }) => {
 	);
 };
 
-export default IntroButton;
+export default ChoosingButton;
