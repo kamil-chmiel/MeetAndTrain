@@ -89,7 +89,7 @@ class ProfileCard extends Component<Props, any> {
 					},
 					{
 						width: '90%',
-						height: '60%',
+						height: '100%',
 						position: 'absolute',
 						backgroundColor: 'white',
 						alignSelf: 'center',

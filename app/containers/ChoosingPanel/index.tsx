@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { getProfiles } from '../../actions/usersActions';
 import * as userActions from '../../actions/usersActions';
 
-import { Container, YesButton, ButtonImage } from './styles';
+import { Container, CardsContainer, ButtonsContainer, NoProfilesText, LoadingPanel, LoadingImage } from './styles';
+import ChoosingButton from '../../components/ChoosingButton';
 import ProfileCard from '../../components/ProfileCard';
 
 interface Profile {
@@ -21,11 +22,13 @@ interface Props {
 
 interface State {
 	currentIndex: Number;
+	loading: Boolean;
 }
 
 class ChoosingPanel extends Component<Props, State> {
 	state = {
-		currentIndex: 0
+		currentIndex: 0,
+		loading: false
 	};
 
 	componentDidMount() {
@@ -33,21 +36,65 @@ class ChoosingPanel extends Component<Props, State> {
 	}
 
 	getUserProfiles = async () => {
+		this.setState({ loading: true });
 		await this.props.getProfiles();
+		this.setState({ loading: false });
 	};
 
 	onCardSwyped = (isUserLiked) => {
+		this.onDecisionMade(isUserLiked);
+	};
+
+	onChoosingButtonPressed = (isUserLiked) => {
+		this.onDecisionMade(isUserLiked);
+	};
+
+	onDecisionMade = (result) => {
 		this.setState({ currentIndex: this.state.currentIndex + 1 });
-		if (isUserLiked) {
-			alert('liked');
-		}
+		alert(result);
 	};
 
 	render() {
-		return <Container width={Dimensions.get('window').width}>{this.renderProfiles()}</Container>;
+		return (
+			<Container width={Dimensions.get('window').width}>
+				{this.renderLoadingPanel()}
+				<CardsContainer width={Dimensions.get('window').width}>{this.renderProfiles()}</CardsContainer>
+				{this.renderChoosingButtons()}
+			</Container>
+		);
 	}
 
+	renderLoadingPanel = () => {
+		if (this.state.loading) {
+			return (
+				<LoadingPanel>
+					<LoadingImage source={require('../../assets/hantla.png')} />
+				</LoadingPanel>
+			);
+		}
+	};
+
+	renderChoosingButtons = () => {
+		if (!this.state.loading) {
+			return (
+				<ButtonsContainer width={Dimensions.get('window').width / 1.7}>
+					<ChoosingButton
+						imageSource={require('../../assets/no_button.png')}
+						onPress={() => this.onChoosingButtonPressed(false)}
+					/>
+					<ChoosingButton
+						imageSource={require('../../assets/yes_button.png')}
+						onPress={() => this.onChoosingButtonPressed(true)}
+					/>
+				</ButtonsContainer>
+			);
+		}
+	};
+
 	renderProfiles = () => {
+		if (this.props.users.profiles.length === 0) {
+			return <NoProfilesText>Theres no profile right now.</NoProfilesText>;
+		}
 		return this.props.users.profiles
 			.map((profile, i) => {
 				if (i < this.state.currentIndex) {
