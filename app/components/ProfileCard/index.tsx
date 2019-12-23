@@ -29,6 +29,7 @@ class ProfileCard extends Component<Props, any> {
 				this.props.onCardSwypeStarted();
 			},
 			onPanResponderRelease: (evt, gestureState) => {
+				this.props.onCardSwypeEnded();
 				if (gestureState.dx > 120) {
 					Animated.spring(this.position, {
 						toValue: { x: SCREEN_WIDTH + 100, y: gestureState.dy }
@@ -84,10 +85,7 @@ class ProfileCard extends Component<Props, any> {
 				{...this.panResponder.panHandlers}
 				style={[
 					{
-						opacity: !this.props.isSwipingActivated ? this.nextCardOpacity : null,
-						transform: this.props.isSwipingActivated
-							? this.rotateTransform
-							: [ { scale: this.nextCardScale } ]
+						transform: this.props.isSwipingActivated ? this.rotateTransform : null
 					},
 					{
 						width: '90%',
