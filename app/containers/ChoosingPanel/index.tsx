@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Animated, Easing, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
-import { getProfiles } from '../../actions/usersActions';
+import { getProfiles, sendResult } from '../../actions/usersActions';
 import * as userActions from '../../actions/usersActions';
 
 import { Container, CardsContainer, ButtonsContainer, NoProfilesText, LoadingPanel, LoadingImage } from './styles';
@@ -18,7 +18,9 @@ interface Props {
 	onCardSwypeStarted: () => void;
 	onCardSwypeEnded: () => void;
 	getProfiles: () => void;
+	sendResult: (userId: Number, partnerId: Number, decision: Boolean) => void;
 	users: { profiles: [Profile] };
+	session: { userId: Number };
 }
 
 interface State {
@@ -34,6 +36,7 @@ class ChoosingPanel extends Component<Props, State> {
 
 	componentDidMount() {
 		this.getUserProfiles();
+		alert(this.props.session.userId);
 	}
 
 	getUserProfiles = async () => {
@@ -52,7 +55,7 @@ class ChoosingPanel extends Component<Props, State> {
 
 	onDecisionMade = (result) => {
 		this.setState({ currentIndex: this.state.currentIndex + 1 });
-		alert(result);
+		this.props.sendResult(this.props.session.userId, 2, result);
 	};
 
 	render() {
@@ -128,8 +131,9 @@ class ChoosingPanel extends Component<Props, State> {
 	};
 }
 
-const mapStateToProps = ({ users }) => ({
-	users
+const mapStateToProps = ({ users, session }) => ({
+	users,
+	session
 });
 
 const mapDispatchToProps = {

@@ -18,3 +18,16 @@ export const getProfiles = () => (dispatch) => {
 		onError: (error) => {}
 	});
 };
+
+export const sendResult = (userId, partnerId, decision) => (dispatch) => {
+	console.log(userId);
+	return Api.post(`/result`, {
+		UserID: Number(userId),
+		PartnerID: partnerId,
+		Decision: decision,
+		onSuccess: (response) => {
+			console.log(response.data);
+		},
+		onError: (error) => {}
+	});
+};

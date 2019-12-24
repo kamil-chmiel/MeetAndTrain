@@ -1,14 +1,18 @@
-import {SET_SESSION} from '../actions/actionTypes';
+import { SET_SESSION } from '../actions/actionTypes';
 
-export default (state = {}, {type, payload}) => {
-  switch (type) {
-    case SET_SESSION: {
-      return {
-        ...state,
-        ...payload,
-      };
-    }
-    default:
-      return state;
-  }
+export const initialState = {
+	userId: 0
+};
+
+export default (state = initialState, { type, payload }) => {
+	switch (type) {
+		case SET_SESSION: {
+			return {
+				...state,
+				...payload
+			};
+		}
+		default:
+			return state;
+	}
 };
