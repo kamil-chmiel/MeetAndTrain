@@ -32,11 +32,7 @@ class CardDetails extends Component<Props, State> {
       <Container>
         <SliderBox
           style={{height: Dimensions.get('window').width}}
-          images={[
-            'https://source.unsplash.com/1024x768/?nature',
-            'https://source.unsplash.com/1024x768/?water',
-            'https://source.unsplash.com/1024x768/?girl',
-          ]}
+          images={[profile.Photo1]}
         />
         <CloseButtonContainer onPress={this.onClosePress}>
           <CloseButton source={require('../../assets/cross.png')} />
