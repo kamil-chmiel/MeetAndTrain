@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Picture, Name, TreningType, AnimatedView } from './styles';
+import { Container, Picture, Name, TreningType, TouchableView } from './styles';
 import { PanResponder, Animated, Dimensions } from 'react-native';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -98,11 +98,12 @@ class ProfileCard extends Component<Props, any> {
 						borderWidth: 3
 					}
 				]}
-				onPress={this.props.onPress}
 			>
-				<Picture />
-				<Name>{this.props.name}</Name>
-				<TreningType>{this.props.description}</TreningType>
+				<TouchableView activeOpacity={1} onPress={this.props.onPress}>
+					<Picture />
+					<Name>{this.props.name}</Name>
+					<TreningType>{this.props.description}</TreningType>
+				</TouchableView>
 			</Animated.View>
 		);
 	}
