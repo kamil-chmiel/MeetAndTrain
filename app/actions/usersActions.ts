@@ -8,8 +8,8 @@ export const setProfiles = (profiles) => ({
 	}
 });
 
-export const getProfiles = () => (dispatch) => {
-	return Api.get(`/partners/${0}/${18}/${100}/${1}/${100}`, {
+export const getProfiles = (userId) => (dispatch) => {
+	return Api.get(`/partners/${userId}/${18}/${100}/${1}/${100}`, {
 		onSuccess: (response) => {
 			const { partners } = response.data;
 			console.log(partners);

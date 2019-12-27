@@ -10,6 +10,7 @@ import ProfileCard from '../../components/ProfileCard';
 import LoadingView from '../../components/LoadingView';
 
 interface Profile {
+	id: Number;
 	Name: string;
 	Description: string;
 }
@@ -17,7 +18,7 @@ interface Profile {
 interface Props {
 	onCardSwypeStarted: () => void;
 	onCardSwypeEnded: () => void;
-	getProfiles: () => void;
+	getProfiles: (userId) => void;
 	sendResult: (userId: Number, partnerId: Number, decision: Boolean) => void;
 	users: { profiles: [Profile] };
 	session: { userId: Number };
@@ -36,12 +37,11 @@ class ChoosingPanel extends Component<Props, State> {
 
 	componentDidMount() {
 		this.getUserProfiles();
-		alert(this.props.session.userId);
 	}
 
 	getUserProfiles = async () => {
 		this.setState({ loading: true });
-		await this.props.getProfiles();
+		await this.props.getProfiles(this.props.session.userId);
 		this.setState({ loading: false });
 	};
 
@@ -54,8 +54,9 @@ class ChoosingPanel extends Component<Props, State> {
 	};
 
 	onDecisionMade = (result) => {
+		const { session, users } = this.props;
+		this.props.sendResult(session.userId, users.profiles[this.state.currentIndex].id, result);
 		this.setState({ currentIndex: this.state.currentIndex + 1 });
-		this.props.sendResult(this.props.session.userId, 2, result);
 	};
 
 	render() {

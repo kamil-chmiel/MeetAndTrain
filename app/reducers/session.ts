@@ -1,7 +1,13 @@
 import { SET_SESSION } from '../actions/actionTypes';
 
 export const initialState = {
-	userId: 0
+	userId: 0,
+	name: '',
+	surname: '',
+	email: '',
+	description: '',
+	birthDate: '',
+	gender: 0
 };
 
 export default (state = initialState, { type, payload }) => {
