@@ -3,17 +3,14 @@ import { Animated, Easing, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { getProfiles, sendResult } from '../../actions/usersActions';
 import * as userActions from '../../actions/usersActions';
+import { NavigationStackProp } from 'react-navigation-stack';
+import { Profile } from '../../models';
 
 import { Container, CardsContainer, ButtonsContainer, NoProfilesText, LoadingPanel, LoadingImage } from './styles';
 import ChoosingButton from '../../components/ChoosingButton';
 import ProfileCard from '../../components/ProfileCard';
 import LoadingView from '../../components/LoadingView';
-
-interface Profile {
-	id: Number;
-	Name: string;
-	Description: string;
-}
+import { withNavigation } from 'react-navigation';
 
 interface Props {
 	onCardSwypeStarted: () => void;
@@ -22,6 +19,7 @@ interface Props {
 	sendResult: (userId: Number, partnerId: Number, decision: Boolean) => void;
 	users: { profiles: [Profile] };
 	session: { userId: Number };
+	navigation: NavigationStackProp<any, any>;
 }
 
 interface State {
@@ -57,6 +55,12 @@ class ChoosingPanel extends Component<Props, State> {
 		const { session, users } = this.props;
 		this.props.sendResult(session.userId, users.profiles[this.state.currentIndex].id, result);
 		this.setState({ currentIndex: this.state.currentIndex + 1 });
+	};
+
+	onCardPressed = () => {
+		this.props.navigation.navigate('CardDetails', {
+			profile: this.props.users.profiles[this.state.currentIndex]
+		});
 	};
 
 	render() {
@@ -107,7 +111,7 @@ class ChoosingPanel extends Component<Props, State> {
 							isSwipingActivated={true}
 							name={profile.Name}
 							description={profile.Description}
-							onPress={() => alert('test')}
+							onPress={this.onCardPressed}
 							onCardSwypeStarted={this.props.onCardSwypeStarted}
 							onCardSwypeEnded={this.props.onCardSwypeEnded}
 							onCardSwyped={this.onCardSwyped}
@@ -141,4 +145,4 @@ const mapDispatchToProps = {
 	...userActions
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChoosingPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(ChoosingPanel));

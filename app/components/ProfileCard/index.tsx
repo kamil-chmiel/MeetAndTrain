@@ -101,9 +101,9 @@ class ProfileCard extends Component<Props, any> {
 			>
 				<TouchableView activeOpacity={1} onPress={this.props.onPress}>
 					<Picture />
-					<Name>{this.props.name}</Name>
-					<TreningType>{this.props.description}</TreningType>
 				</TouchableView>
+				<Name>{this.props.name}</Name>
+				<TreningType>{this.props.description}</TreningType>
 			</Animated.View>
 		);
 	}
