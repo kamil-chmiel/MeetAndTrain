@@ -13,7 +13,7 @@ interface State {
 	value: number;
 }
 
-class PickerField extends Component<Props, any> {
+class PickerField extends Component<Props, State> {
 	state = {
 		pickerVisible: false,
 		value: null

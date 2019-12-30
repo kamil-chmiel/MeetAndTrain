@@ -1,18 +1,12 @@
-import { SET_SESSION } from '../actions/actionTypes';
+import { SET_PROFILES } from '../actions/actionTypes';
 
 export const initialState = {
-	userId: 0,
-	name: '',
-	surname: '',
-	email: '',
-	description: '',
-	birthDate: '',
-	gender: 0
+	profiles: []
 };
 
 export default (state = initialState, { type, payload }) => {
 	switch (type) {
-		case SET_SESSION: {
+		case SET_PROFILES: {
 			return {
 				...state,
 				...payload

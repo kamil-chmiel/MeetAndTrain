@@ -10,7 +10,7 @@ export const setSession = (userId) => ({
 	}
 });
 
-export const openSession = ({ id = '' }) => (dispatch) =>
+export const openSession = (id) => (dispatch) =>
 	AsyncStorage.multiSet([ [ 'userId', id ] ]).then(() => {
 		dispatch(setSession(id));
 	});
@@ -29,7 +29,7 @@ export const register = (name, surname, email, password, birthDate, type) => (di
 			Longitude: 0
 		},
 		onSuccess: ({ data }) => {
-			dispatch(openSession(data.userId)).then(() => {
+			dispatch(openSession(String(data.userId))).then(() => {
 				NavigationService.navigate('MainPanel', {});
 			});
 		},
@@ -46,7 +46,7 @@ export const login = (email, password) => (dispatch) => {
 			Password: password
 		},
 		onSuccess: ({ data }) => {
-			dispatch(openSession(data.userId)).then(() => {
+			dispatch(openSession(String(data.userId))).then(() => {
 				NavigationService.navigate('MainPanel', {});
 			});
 		},

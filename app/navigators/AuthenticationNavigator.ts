@@ -3,9 +3,17 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Intro from '../containers/Intro';
 import SignUp from '../containers/SignUp';
 import SignIn from '../containers/SignIn';
+import SplashScreen from '../containers/SplashScreen';
 import MainNavigator from './MainNavigator';
 
 const AuthenticationNavigator = createStackNavigator({
+	SplashScreen: {
+		screen: SplashScreen,
+		navigationOptions: {
+			header: null,
+			headerBackTitle: ' '
+		}
+	},
 	Intro: {
 		screen: Intro,
 		navigationOptions: {

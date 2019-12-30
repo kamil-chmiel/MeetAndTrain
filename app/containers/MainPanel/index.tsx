@@ -1,37 +1,44 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
-import {
-  PagerTabIndicator,
-  IndicatorViewPager,
-  PagerTitleIndicator,
-  PagerDotIndicator,
-} from 'react-native-best-viewpager';
+import {IndicatorViewPager} from 'react-native-best-viewpager';
+import ChoosingPanel from '../ChoosingPanel';
+import Profile from '../Profile';
+import Matches from '../Matches';
 
 import {Container, AvatarContainer, Avatar, FormContainer} from './styles';
-import CustomTextInput from '../../components/CustomTextInput';
-import AvatarPicker from '../../components/AvatarPicker';
-import DatePickerField from '../../components/DatePickerField';
-import IntroButton from '../../components/IntroButton';
-import SignIn from '../../containers/SignIn';
 
 interface Props {}
 
-interface State {}
+interface State {
+  isSwypingEnabled: boolean;
+}
 
 class MainPanel extends Component<Props, State> {
+  state = {
+    isSwypingEnabled: true,
+  };
+
+  onCardSwypeStarted = () => {
+    this.setState({isSwypingEnabled: false});
+  };
+
+  onCardSwypeEnded = () => {
+    this.setState({isSwypingEnabled: true});
+  };
+
   render() {
     return (
       <Container>
-        <IndicatorViewPager style={{flex: 1}}>
-          <View style={{backgroundColor: 'cadetblue'}}>
-            <Text>page one</Text>
-          </View>
-          <View style={{backgroundColor: 'cornflowerblue'}}>
-            <Text>page two</Text>
-          </View>
-          <View style={{backgroundColor: '#1AA094'}}>
-            <Text>page three</Text>
-          </View>
+        <IndicatorViewPager
+          scrollEnabled={this.state.isSwypingEnabled}
+          initialPage={1}
+          style={{flex: 1}}>
+          <Profile />
+          <ChoosingPanel
+            onCardSwypeStarted={this.onCardSwypeStarted}
+            onCardSwypeEnded={this.onCardSwypeEnded}
+          />
+          <Matches />
         </IndicatorViewPager>
       </Container>
     );
