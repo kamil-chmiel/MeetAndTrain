@@ -24,7 +24,7 @@ interface Props {
   onCardSwypeStarted: () => void;
   onCardSwypeEnded: () => void;
   getProfiles: (userId) => void;
-  sendResult: (userId: Number, partnerId: Number, decision: Boolean) => void;
+  sendResult: (userId: Number, profile: Profile, decision: Boolean) => void;
   users: {profiles: [Profile]};
   session: {userId: Number};
   navigation: NavigationStackProp<any, any>;
@@ -63,7 +63,7 @@ class ChoosingPanel extends Component<Props, State> {
     const {session, users} = this.props;
     this.props.sendResult(
       session.userId,
-      users.profiles[this.state.currentIndex].id,
+      users.profiles[this.state.currentIndex],
       result,
     );
     this.setState({currentIndex: this.state.currentIndex + 1});
@@ -94,7 +94,7 @@ class ChoosingPanel extends Component<Props, State> {
   };
 
   renderChoosingButtons = () => {
-    if (!this.state.loading) {
+    if (!this.state.loading && this.props.users.profiles.length !== 0) {
       return (
         <ButtonsContainer width={Dimensions.get('window').width / 1.7}>
           <ChoosingButton
@@ -112,7 +112,7 @@ class ChoosingPanel extends Component<Props, State> {
 
   renderProfiles = () => {
     if (this.props.users.profiles.length === 0) {
-      return <NoProfilesText>Theres no profile right now.</NoProfilesText>;
+      return <NoProfilesText>There's no profiles right now.</NoProfilesText>;
     }
     return this.props.users.profiles
       .map((profile, i) => {
