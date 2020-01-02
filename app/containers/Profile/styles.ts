@@ -54,3 +54,12 @@ export const Description = styled.Text`
   border-radius: 5;
   overflow: hidden;
 `;
+
+export const ButtonsContainer = styled.View`
+  flex: 1;
+  width: 50%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-self: center;
+`;

@@ -11,6 +11,8 @@ import {
   DataContainer,
   Description,
 } from './styles';
+import {ButtonsContainer} from '../Profile/styles';
+import ChoosingButton from '../../components/ChoosingButton';
 
 interface Props {}
 
@@ -36,6 +38,12 @@ class MyProfile extends Component<Props, State> {
             TestowyTestowyTestowyTestowyTestowyTestowyTestowyTestowy
           </Description>
         </DataContainer>
+        <ButtonsContainer>
+          <ChoosingButton
+            imageSource={require('../../assets/settingsIcon.png')}></ChoosingButton>
+          <ChoosingButton
+            imageSource={require('../../assets/editProfileIcon.png')}></ChoosingButton>
+        </ButtonsContainer>
       </Container>
     );
   }
