@@ -3,6 +3,8 @@ import {createStackNavigator} from 'react-navigation-stack';
 import MainPanel from '../containers/MainPanel';
 import CardDetails from '../containers/CardDetails';
 import MatchScreen from '../containers/MatchScreen';
+import Settings from '../containers/Settings';
+import EditProfile from '../containers/EditProfile';
 import {marineGreen} from '../styles/colors';
 
 const MainNavigator = createStackNavigator(
@@ -23,6 +25,18 @@ const MainNavigator = createStackNavigator(
     },
     MatchScreen: {
       screen: MatchScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Settings: {
+      screen: Settings,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    EditProfile: {
+      screen: EditProfile,
       navigationOptions: {
         header: null,
       },
